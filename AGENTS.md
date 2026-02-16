@@ -13,14 +13,32 @@ The agent MUST follow these rules strictly.
 
 ### 1. Branch Creation
 
-- Before making any file modifications, the agent MUST:
-  1. Determine the current base branch (default: `main`).
-  2. Ensure the working tree is clean using `git status`.
-  3. Create a new branch from the current HEAD using:
+### Branch Creation & Clean State (MANDATORY)
 
-    ```bash
-    git checkout -b <type>/<short-description>
-    ```
+- Before making any file modifications, the agent MUST:
+
+    1. Verify the working tree is clean:
+    - Run `git status --porcelain`
+    - If output is not empty → STOP and report.
+
+    2. Determine whether this is a NEW TASK or a FOLLOW-UP:
+
+    - NEW TASK if the user explicitly asks to "start a new branch" / "new task" / "new feature".
+
+    - Otherwise treat as FOLLOW-UP and continue on the current branch.
+
+    3. If NEW TASK:
+    - `git fetch origin`
+    - Create and switch to a new branch based on `origin/main`:
+        `git checkout -b <type>/<short-description> origin/main`
+
+    4. If FOLLOW-UP:
+    - Continue working on the current branch.
+    - Do NOT create a new branch unless explicitly instructed.
+
+    5. Confirm:
+    - `git status` shows the intended branch
+    - Working tree is clean
 
 - Allowed branch types:
   - `feature`
