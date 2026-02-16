@@ -1,0 +1,24 @@
+name: sklint
+
+on:
+  pull_request:
+  push:
+
+jobs:
+  validate-skills:
+    name: Validate Skills
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: "1.22.x"
+
+      - name: Install sklint
+        run: go install github.com/sven1103-agent/sklint/cmd/sklint@latest
+
+      - name: Run sklint
+        run: sklint --strict .
