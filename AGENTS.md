@@ -13,8 +13,6 @@ The agent MUST follow these rules strictly.
 
 ### 1. Branch Creation
 
-### Branch Creation & Clean State (MANDATORY)
-
 - Before making any file modifications, the agent MUST:
 
     1. Verify the working tree is clean:
