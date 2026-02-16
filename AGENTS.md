@@ -66,16 +66,24 @@ The agent MUST follow these rules strictly.
 
 ### 2. Committing Changes
 
-- All changes MUST be committed.
-- The agent MUST NOT leave unstaged or uncommitted changes.
+- All task-related changes MUST be committed.
+- The agent MUST NOT leave task-related changes unstaged or uncommitted.
 - The agent MUST create exactly one logical commit per task unless the task explicitly requires multiple commits.
+- The agent MUST stage ONLY files that are part of the task (files it created OR modified for the task).
+- The agent MUST NOT stage unrelated files (including generated artifacts, caches, build outputs, or editor temp files).
 
-Commit command:
+#### Staging and commit commands (use explicit paths)
 
 ```bash
-git add -A
-git commit -m "<title>" -m "<description>"
+git add <path1> <path2> ...
+git commit -m "<type>: <short title>" -m "<description>"
 ```
+
+Before committing, the agent MUST:
+- run `git status`
+- verify only intended files are staged
+
+The agent MUST NOT use `git add -A` unless explicitly instructed.
 
 ---
 
@@ -122,3 +130,46 @@ Before finishing, the agent MUST:
    - Commit hash
 
 Failure to comply with these rules is considered incomplete task execution.
+
+
+### 5. Pull Request Workflow (MANDATORY)
+
+After committing changes, the agent MUST create a Pull Request in **DRAFT** state.
+
+The Draft PR MUST:
+
+- Clearly describe the intended change
+- Not assume final approval
+- Be concise and review-oriented
+- Reflect exactly one logical unit of work (unless explicitly instructed otherwise)
+
+---
+
+#### Draft PR Template
+
+```
+## Summary
+<What this PR introduces or changes>
+
+## Scope
+- <Major change or affected component>
+- <Major change or affected component>
+
+## Rationale
+<Why this change is necessary>
+
+## Status
+Draft – awaiting validation and review.
+```
+
+---
+
+#### Rules
+
+- The PR MUST be created as a Draft.
+- The agent MUST NOT mark the PR as “Ready for Review” unless explicitly instructed.
+- The PR MUST remain concise and factual.
+- The PR MUST NOT include internal reasoning traces or irrelevant logs.
+- The PR MUST align with the associated task or issue reference, if available.
+
+Failure to comply with this policy is considered incomplete task execution.
