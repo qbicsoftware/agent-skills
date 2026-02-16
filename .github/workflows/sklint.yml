@@ -20,5 +20,13 @@ jobs:
       - name: Install sklint
         run: go install github.com/sven1103-agent/sklint/cmd/sklint@latest
 
+      - name: Add Go bin to PATH
+        run: echo "$(go env GOPATH)/bin" >> "$GITHUB_PATH"
+
       - name: Run sklint
-        run: sklint --strict .
+        run: |
+          for dir in skills/*; do
+            if [ -d "$dir" ]; then
+              sklint --strict "$dir"
+            fi
+          done
