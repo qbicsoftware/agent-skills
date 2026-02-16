@@ -25,8 +25,12 @@ jobs:
 
       - name: Run sklint
         run: |
+          set -euo pipefail
           for dir in skills/*; do
             if [ -d "$dir" ]; then
+              echo "::group::sklint ${dir}"
               sklint --strict "$dir"
+              echo "sklint passed for ${dir}"
+              echo "::endgroup::"
             fi
           done
