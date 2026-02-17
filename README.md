@@ -1,9 +1,9 @@
-# QBiC × BMBS OpenSkills Collection (University of Tübingen)
+# QBiC × BDS Agent Skills Collection (University of Tübingen)
 
 This repository is a curated collection of **self-made,
-OpenSkills.io--compliant skills** developed at the University of
+[Agent Skills](https://agentskills.io)--compliant skills** developed at the University of
 Tübingen as a joint effort of the **Quantitative Biology Center (QBiC)**
-and the **Chair for Biomedical Biosciences (BMBS)**.
+and the **Chair for Biomedical Biosciences (BDS)**.
 
 The primary purpose of this repository is to provide reusable, versioned
 skills that can be embedded into other Git projects (e.g., agent
@@ -15,7 +15,7 @@ validation and maintenance centralized.
 ## Scope
 
 -   A collection of skills stored under `./skills/`
--   Skills intended to be fully **OpenSkills.io compliant**
+-   Skills intended to be fully **agentskills.io compliant**
 -   Continuous validation via GitHub CI using `sklint` in strict mode
 -   Optional agent governance via `AGENTS.md` (see section below)
 
@@ -39,7 +39,7 @@ This repository is a **skills library**, not a full agent project.
 ## Validation (CI)
 
 This repository runs `sklint` in CI to ensure all skills conform to the
-OpenSkills.io specification.
+[Agent Skills](https://agentskills.io) specification.
 
 Typical CI logic:
 
@@ -124,7 +124,7 @@ instructions to apply to your project.
 ## Contributing
 
 -   Add new skills under `skills/<skill-name>/`
--   Ensure OpenSkills.io compliance
+-   Ensure [Agent Skills](https://agentskills.io) compliance
 -   Run `sklint --strict` locally
 -   CI must pass before merging
 
@@ -135,11 +135,10 @@ instructions to apply to your project.
 Maintained as a joint effort of:
 
 -   Quantitative Biology Center (QBiC), University of Tübingen
--   Chair for Biomedical Biosciences (BMBS), University of Tübingen
+-   Chair for Biomedical Biosciences (BDS), University of Tübingen
 
 ------------------------------------------------------------------------
 
 ## License
 
-Specify your license here (e.g., MIT, Apache-2.0, or internal usage
-terms).
+See [LICENSE](LICENSE) for detailed license information.
