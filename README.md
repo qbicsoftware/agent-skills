@@ -54,7 +54,7 @@ For installation instructions and full usage documentation, refer to the [`sklin
 
 ### Option A: Git Submodule (Recommended)
 
-    git submodule add <REPO_URL> vendor/tue-skills
+    git submodule add https://github.com/qbicsoftware/agent-skills vendor/tue-skills
     git submodule update --init --recursive
 
 Reference skills from:
@@ -69,17 +69,17 @@ Update later:
 
 ### Option B: Git Subtree
 
-    git subtree add --prefix vendor/tue-skills <REPO_URL> main --squash
+    git subtree add --prefix vendor/tue-skills https://github.com/qbicsoftware/agent-skills main --squash
 
 Update:
 
-    git subtree pull --prefix vendor/tue-skills <REPO_URL> main --squash
+    git subtree pull --prefix vendor/tue-skills https://github.com/qbicsoftware/agent-skills main --squash
 
 ------------------------------------------------------------------------
 
 ### Option C: Manual Clone
 
-    git clone <REPO_URL>
+    git clone https://github.com/qbicsoftware/agent-skills
 
 Copy or sync the `skills/` directory as needed.
 
