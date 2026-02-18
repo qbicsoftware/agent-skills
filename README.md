@@ -3,7 +3,7 @@
 This repository is a curated collection of **self-made,
 [Agent Skills](https://agentskills.io)--compliant skills** developed at the University of
 Tübingen as a joint effort of the **Quantitative Biology Center (QBiC)**
-and the **Chair for Biomedical Biosciences (BDS)**.
+and the **Chair for Biomedical Data Science (BDS)**.
 
 The primary purpose of this repository is to provide reusable, versioned
 skills that can be embedded into other Git projects (e.g., agent
