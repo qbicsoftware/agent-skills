@@ -139,4 +139,4 @@ Maintained as a joint effort of:
 
 ## License
 
-See [LICENSE](LICENSE) for detailed license information.
+This repository is lincensed under the [AGPL-3.0 license](https://github.com/qbicsoftware/agent-skills?tab=AGPL-3.0-1-ov-file#)
