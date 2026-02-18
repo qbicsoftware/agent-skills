@@ -133,7 +133,7 @@ instructions to apply to your project.
 Maintained as a joint effort of:
 
 -   Quantitative Biology Center (QBiC), University of Tübingen
--   Chair for Biomedical Biosciences (BDS), University of Tübingen
+-   Chair for Biomedical Data Science (BDS), University of Tübingen
 
 ------------------------------------------------------------------------
 
