@@ -38,17 +38,15 @@ This repository is a **skills library**, not a full agent project.
 
 ## Validation (CI)
 
-This repository runs `sklint` in CI to ensure all skills conform to the
-[Agent Skills](https://agentskills.io) specification.
+This repository runs [`sklint`](https://github.com/sven1103-agent/sklint) in CI to ensure all skills conform to the [Agent Skills](https://agentskills.io) specification. `sklint` is a Go CLI purpose-built for this — it is **preferred over the reference implementation** (`skills-ref`) bundled with the agentskills.io repository, which is intended for demonstration purposes only and is not suitable for production CI use.
 
 Typical CI logic:
 
 -   Iterate over directories in `skills/*`
 -   Run `sklint --strict <skill-dir>`
 
-You can validate locally (if installed):
+For installation instructions and full usage documentation, refer to the [`sklint` repository](https://github.com/sven1103-agent/sklint).
 
-    sklint --strict skills/<skill-name>
 
 ------------------------------------------------------------------------
 
