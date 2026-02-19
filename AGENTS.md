@@ -17,7 +17,7 @@ The agent MUST follow these rules strictly.
 
     1. Verify the working tree is clean:
     - Run `git status --porcelain`
-    - If output is not empty -> ask if the agent shall stash and pop to the new branch or to stop.
+    - If output is not empty → STOP and report.
 
     2. Determine whether this is a NEW TASK or a FOLLOW-UP:
 
