@@ -137,6 +137,20 @@ Maintained as a joint effort of:
 
 ------------------------------------------------------------------------
 
+## Skills
+
+### `linear-thinking`
+
+#### Description
+Enforce clear, step-by-step, cause→effect reasoning and a single ordered plan. Use for tasks that benefit from structured analysis (requirements, debugging, implementation planning, checklists).
+
+#### License
+AGPL-3.0-only
+
+#### Metadata
+- author: `Sven Fillinger`
+- version: `1.0`
+
 ## License
 
 This repository is lincensed under the [AGPL-3.0 license](https://github.com/qbicsoftware/agent-skills?tab=AGPL-3.0-1-ov-file#)
