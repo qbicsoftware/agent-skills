@@ -17,7 +17,7 @@ The agent MUST follow these rules strictly.
 
     1. Verify the working tree is clean:
     - Run `git status --porcelain`
-    - If output is not empty → STOP and report.
+    - If output is not empty -> ask if the agent shall stash and pop to the new branch or to stop.
 
     2. Determine whether this is a NEW TASK or a FOLLOW-UP:
 
@@ -171,3 +171,62 @@ Draft – awaiting validation and review.
 - The PR MUST align with the associated task or issue reference, if available.
 
 Failure to comply with this policy is considered incomplete task execution.
+
+---
+
+## 6. Skills Section Management in README.md
+
+### Purpose
+
+The `## Skills` section in `README.md` provides a human-readable listing of all available skills in the `./skills/` directory. This section is maintained using the template at `./template/skill_entry.md`.
+
+### When to Update
+
+Update the `## Skills` section in `README.md` when explicitly instructed to do so (e.g., "update the skill section" or "add skill documentation").
+
+### How to Update
+
+1. **List Available Skills**
+   - Scan the `./skills/` directory for all skill directories
+   - Each skill directory should contain a `SKILL.md` file
+
+2. **Use the Template**
+   - Reference the template at `./template/skill_entry.md`
+   - The template defines the structure for each skill entry:
+     - Skill name (as a level 3 heading)
+     - Description
+     - License
+     - Metadata
+
+3. **Populate the Section**
+   - For each skill in `./skills/`, create an entry using the template
+   - Extract skill information from the skill's `SKILL.md` file
+   - Follow the template format exactly to ensure consistency
+
+4. **Validation**
+   - Ensure all skills in `./skills/` are documented in the section
+   - Verify each entry contains required fields: name, description, and license
+   - Check that the formatting matches the template structure
+
+### Example Entry
+
+Using the template structure:
+
+```markdown
+### `linear-thinking`
+
+#### Description
+A skill providing structured linear reasoning capabilities for agents.
+
+#### License
+AGPL-3.0
+
+#### Metadata
+- version: `1.0.0`
+```
+
+### Notes
+
+- Maintain alphabetical order or organize by category as appropriate
+- Do not manually remove entries when skills are deleted; update the listing only when explicitly asked
+- This section serves as documentation for users browsing the repository—keep entries clear and concise
