@@ -7,6 +7,87 @@ Optimize for correctness, clarity, robustness, and minimal, maintainable changes
 
 ---
 
+## Build / Lint / Test Commands
+
+This repository uses [`sklint`](https://github.com/sven1103-agent/sklint) for validating skills against the [Agent Skills](https://agentskills.io) specification.
+
+### Validation (Lint)
+
+```bash
+# Install sklint
+go install github.com/sven1103-agent/sklint/cmd/sklint@latest
+
+# Validate a single skill (strict mode)
+sklint --strict skills/<skill-name>
+
+# Validate all skills
+for dir in skills/*; do
+  if [ -d "$dir" ]; then
+    sklint --strict "$dir"
+  fi
+done
+```
+
+### Running CI Locally
+
+The CI workflow (`.github/workflows/sklint.yml`) runs the same validation. Ensure all skills pass `sklint --strict` before committing.
+
+---
+
+## Code Style Guidelines
+
+### Skill Structure
+
+Each skill lives in `skills/<skill-name>/` and must include:
+
+- `SKILL.md` - The main skill definition file
+- Additional files allowed (examples, configs) as needed
+
+### SKILL.md Format
+
+Use YAML frontmatter with these required fields:
+
+```yaml
+---
+name: <skill-name-in-kebab-case>
+description: <clear description of what the skill does>
+license: <SPDX license identifier>
+metadata:
+  author: <author name>
+  version: "<semver>"
+---
+```
+
+**Requirements:**
+- `name`: kebab-case, must match directory name
+- `description`: Concise, max 2 sentences
+- `license`: Use SPDX identifiers (e.g., `AGPL-3.0-only`, `MIT`, `Apache-2.0`)
+- `metadata.author`: Full name or GitHub username
+- `metadata.version`: Semantic version string (quoted)
+
+### Content Style
+
+- Use clear, imperative language
+- Use markdown headings (##, ###) for section hierarchy
+- Include "When to use" and "When NOT to use" sections
+- Provide concrete examples
+- Keep sections focused and concise
+
+### Naming Conventions
+
+- Skill directories: `kebab-case` (e.g., `linear-thinking`, `code-review`)
+- Skill names in frontmatter: must match directory name
+- Headings: Title Case or Sentence case consistently
+
+### Markdown Guidelines
+
+- Use `---` for frontmatter separator (must be first content in file)
+- Use fenced code blocks with language hints: ```bash, ```yaml, etc.
+- Use bullet points for lists
+- Keep line length reasonable (max ~100 chars when practical)
+
+---
+
 ## Version Control / Branching Conventions (MANDATORY)
 
 The agent MUST follow these rules strictly.
