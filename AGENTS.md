@@ -131,6 +131,13 @@ The agent MUST follow these rules strictly.
   <type>/<kebab-case-short-description>
   ```
 
+  Where `<type>` must be one of the allowed branch types:
+  - `feature` - New feature or functionality
+  - `fix` - Bug fix
+  - `chore` - Maintenance or routine tasks
+  - `refactor` - Code refactoring without behavior change
+  - `test` - Adding or updating tests
+
   Example:
   ```
   feature/duration-cli-parsing
