@@ -160,7 +160,7 @@ Guide for building valid Agent Skills. Use when creating new skills, validating 
 AGPL-3.0-only
 
 #### Metadata
-- author: `agent-skills`
+- author: `Tobias Koch`
 - version: `1.0`
 
 ## License
