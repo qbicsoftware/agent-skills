@@ -160,4 +160,4 @@ sklint --strict skills/my-new-skill
 
 ## Reference
 
-See [AGENTSKILLS_SPEC.md](../../AGENTSKILLS_SPEC.md) for the complete specification.
+See [AGENTSKILLS_SPEC.md](assets/AGENTSKILLS_SPEC.md) for the complete specification.
