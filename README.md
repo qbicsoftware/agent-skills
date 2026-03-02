@@ -151,6 +151,18 @@ AGPL-3.0-only
 - author: `Sven Fillinger`
 - version: `1.0`
 
+### `build-skill`
+
+#### Description
+Guide for building valid Agent Skills. Use when creating new skills, validating existing ones, or when you need to understand the agentskills specification structure.
+
+#### License
+AGPL-3.0-only
+
+#### Metadata
+- author: `agent-skills`
+- version: `1.0`
+
 ## License
 
 This repository is lincensed under the [AGPL-3.0 license](https://github.com/qbicsoftware/agent-skills?tab=AGPL-3.0-1-ov-file#)
